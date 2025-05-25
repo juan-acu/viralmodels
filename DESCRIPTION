@@ -28,6 +28,7 @@ Imports:
     hardhat,
     magrittr,
     parsnip,
+    purrr,
     recipes,
     rsample,
     stats,

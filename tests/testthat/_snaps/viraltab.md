@@ -81,10 +81,10 @@
       2             normalized_KNN Preprocessor1_Model1     rsq   0.75    0.03 2
       3         simple_CART_bagged Preprocessor1_Model1    rmse 143.53    3.09 2
       4         simple_CART_bagged Preprocessor1_Model1     rsq   0.61    0.04 2
-      5              simple_Cubist Preprocessor1_Model1    rmse 156.72   28.24 2
-      6              simple_Cubist Preprocessor1_Model1     rsq   0.58    0.13 2
-      7                  simple_rf Preprocessor1_Model1    rmse 156.99    9.59 2
-      8                  simple_rf Preprocessor1_Model1     rsq   0.75    0.06 2
+      5                  simple_rf Preprocessor1_Model1    rmse 156.99    9.59 2
+      6                  simple_rf Preprocessor1_Model1     rsq   0.75    0.06 2
+      7              simple_Cubist Preprocessor1_Model1    rmse 157.27   28.79 2
+      8              simple_Cubist Preprocessor1_Model1     rsq   0.59    0.12 2
       9              full_quad_KNN Preprocessor1_Model1    rmse 167.49   16.21 2
       10             full_quad_KNN Preprocessor1_Model1     rsq   0.53    0.11 2
       11     normalized_SVM_radial Preprocessor1_Model1    rmse 232.88   10.02 2
@@ -100,10 +100,10 @@
       2              recipe nearest_neighbor    1
       3  workflow_variables         bag_tree    2
       4  workflow_variables         bag_tree    2
-      5  workflow_variables     cubist_rules    3
-      6  workflow_variables     cubist_rules    3
-      7  workflow_variables      rand_forest    4
-      8  workflow_variables      rand_forest    4
+      5  workflow_variables      rand_forest    3
+      6  workflow_variables      rand_forest    3
+      7  workflow_variables     cubist_rules    4
+      8  workflow_variables     cubist_rules    4
       9              recipe nearest_neighbor    5
       10             recipe nearest_neighbor    5
       11             recipe          svm_rbf    6
