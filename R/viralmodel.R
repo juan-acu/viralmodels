@@ -2,6 +2,8 @@
 #'
 #' Returns performance metrics for a selected model
 #' 
+#' @import baguette
+#' 
 #' @param output A non-ranked viraltab output
 #' @param modelo A character value 
 #'
