@@ -1,4 +1,4 @@
-test_that("viraltab() works", {
+test_that("`viralvis()` plots as expected", {
   library(dplyr)
   library(magrittr)
   library(baguette)
@@ -8,8 +8,8 @@ test_that("viraltab() works", {
   library(rules)
   library(glmnet)
   # Define the function to impute values in the undetectable range
+  set.seed(123)
   impute_undetectable <- function(column) {
-    set.seed(123)
     ifelse(column <= 40,
            rexp(sum(column <= 40), rate = 1/13) + 1,
            column)
@@ -28,6 +28,9 @@ test_that("viraltab() works", {
   repeticiones <- 1
   rejilla <- 1
   set.seed(123)
-  expect_snapshot(viraltab(traindata, semilla, target, viralvars, logbase, 
-                           pliegues, repeticiones, rejilla, rank_output = TRUE))
+  vdiffr::expect_doppelganger(
+    title = "viralvis",
+    fig = viraltab(traindata, semilla, target, viralvars, logbase, pliegues,
+                   repeticiones, rejilla, rank_output = FALSE) %>% viralvis()
+  )
 })

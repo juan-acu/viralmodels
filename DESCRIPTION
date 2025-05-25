@@ -18,12 +18,15 @@ Suggests:
     kknn,
     ranger,
     rules,
-    testthat (>= 3.0.0)
+    testthat (>= 3.0.0),
+    vdiffr,
+    viraldomain
 Config/testthat/edition: 3
 Imports: 
     dials,
     dplyr,
     hardhat,
+    magrittr,
     parsnip,
     recipes,
     rsample,
