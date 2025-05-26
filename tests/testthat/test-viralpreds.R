@@ -1,7 +1,6 @@
 test_that("viralpreds() works", {
   library(dplyr)
   library(magrittr)
-  library(baguette)
   library(kernlab)
   library(kknn)
   library(ranger)

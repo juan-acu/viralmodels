@@ -20,7 +20,6 @@
 #' \donttest{
 #' library(dplyr)
 #' library(magrittr)
-#' library(baguette)
 #' library(kernlab)
 #' library(kknn)
 #' library(ranger)
@@ -58,9 +57,9 @@ viraltab <- function(traindata, semilla, target, viralvars, logbase, pliegues, r
       models = list(rf = magrittr::`%>%`(magrittr::`%>%`(parsnip::rand_forest(mtry = hardhat::tune(), min_n = hardhat::tune(), trees = hardhat::tune()),
                                                          parsnip::set_engine("ranger")),
                                          parsnip::set_mode("regression")),
-                    CART_bagged = magrittr::`%>%`(magrittr::`%>%`(
-                      parsnip::bag_tree(), parsnip::set_engine("rpart", times = 50L)),
-                      parsnip::set_mode("regression")),
+                    # CART_bagged = magrittr::`%>%`(magrittr::`%>%`(
+                    #   parsnip::bag_tree(), parsnip::set_engine("rpart", times = 50L)),
+                    #   parsnip::set_mode("regression")),
                     Cubist =magrittr::`%>%`(parsnip::cubist_rules(committees = hardhat::tune(), neighbors = hardhat::tune()),
                                             parsnip::set_engine("Cubist"))
       )

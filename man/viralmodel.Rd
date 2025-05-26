@@ -21,7 +21,6 @@ Returns performance metrics for a selected model
 \donttest{
 library(dplyr)
 library(magrittr)
-library(baguette)
 library(kernlab)
 library(kknn)
 library(ranger)

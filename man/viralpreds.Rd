@@ -30,7 +30,6 @@ It allows users to specify two types of predictions: normal predictions on the f
 \donttest{
 library(dplyr)
 library(magrittr)
-library(baguette)
 library(kernlab)
 library(kknn)
 library(ranger)

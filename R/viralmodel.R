@@ -2,8 +2,6 @@
 #'
 #' Returns performance metrics for a selected model
 #' 
-#' @import baguette
-#' 
 #' @param output A non-ranked viraltab output
 #' @param modelo A character value 
 #'
@@ -14,7 +12,6 @@
 #' \donttest{
 #' library(dplyr)
 #' library(magrittr)
-#' library(baguette)
 #' library(kernlab)
 #' library(kknn)
 #' library(ranger)
