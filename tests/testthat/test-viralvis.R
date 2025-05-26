@@ -1,6 +1,7 @@
 test_that("`viralvis()` plots as expected", {
   library(dplyr)
   library(magrittr)
+  library(baguette)
   library(kernlab)
   library(kknn)
   library(ranger)

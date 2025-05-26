@@ -10,28 +10,31 @@ Encoding: UTF-8
 Roxygen: list(markdown = TRUE)
 RoxygenNote: 7.3.2
 Suggests: 
-    Cubist,
-    earth,
-    glmnet,
-    kernlab,
-    kknn,
-    ranger,
-    rules,
     testthat (>= 3.0.0),
-    vdiffr,
-    viraldomain
+    vdiffr
 Config/testthat/edition: 3
 Imports: 
+    baguette,
+    Cubist,
     dials,
     dplyr,
+    earth,
+    glmnet,
     hardhat,
+    kernlab,
+    kknn,
     magrittr,
+    nnet,
     parsnip,
     purrr,
+    ranger,
     recipes,
+    rpart,
     rsample,
+    rules,
     stats,
     tidyselect,
     tune,
+    viraldomain,
     workflows,
     workflowsets

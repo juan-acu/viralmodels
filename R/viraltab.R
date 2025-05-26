@@ -20,6 +20,7 @@
 #' \donttest{
 #' library(dplyr)
 #' library(magrittr)
+#' library(baguette)
 #' library(kernlab)
 #' library(kknn)
 #' library(ranger)
@@ -50,6 +51,17 @@
 #' }
 viraltab <- function(traindata, semilla, target, viralvars, logbase, pliegues, repeticiones, rejilla, rank_output = TRUE){
   # Define competing models with workflows and preprocessing
+  invisible(kernlab::rbfdot(1))
+  invisible(baguette::class_cost(c(0,5)))
+  invisible(Cubist::cubistControl())
+  invisible(ranger::ranger(Species ~ ., data = data.frame(Sepal.Length=c(5.1,4.9), Species=as.factor(c("setosa", "setosa")))))
+  invisible(kknn::contr.dummy(2))
+  invisible(glmnet::glmnet(x = data.frame(x1=c(0.2738,2.2448), x2=c(-0.0366,-0.5460)), y = c(-1.2748,1.8434)))
+  invisible(earth::earth(Volume ~ ., data = data.frame(Girth=c(8.3,8.6), Volume=c(10.3, 10.3)), Scale.y=FALSE))
+  invisible(rules::committees(c(1,2)))
+  invisible(viraldomain::sero[1,1])
+  invisible(rpart::kyphosis[1,1])
+  invisible(nnet::class.ind("c1"))
   results <- magrittr::`%>%`(
     dplyr::bind_rows(
     workflowsets::workflow_set(
@@ -57,9 +69,9 @@ viraltab <- function(traindata, semilla, target, viralvars, logbase, pliegues, r
       models = list(rf = magrittr::`%>%`(magrittr::`%>%`(parsnip::rand_forest(mtry = hardhat::tune(), min_n = hardhat::tune(), trees = hardhat::tune()),
                                                          parsnip::set_engine("ranger")),
                                          parsnip::set_mode("regression")),
-                    # CART_bagged = magrittr::`%>%`(magrittr::`%>%`(
-                    #   parsnip::bag_tree(), parsnip::set_engine("rpart", times = 50L)),
-                    #   parsnip::set_mode("regression")),
+                    CART_bagged = magrittr::`%>%`(magrittr::`%>%`(
+                      parsnip::bag_tree(), parsnip::set_engine("rpart", times = 50L)),
+                      parsnip::set_mode("regression")),
                     Cubist =magrittr::`%>%`(parsnip::cubist_rules(committees = hardhat::tune(), neighbors = hardhat::tune()),
                                             parsnip::set_engine("Cubist"))
       )
