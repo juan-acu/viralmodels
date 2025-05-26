@@ -58,6 +58,7 @@ viraltab <- function(traindata, semilla, target, viralvars, logbase, pliegues, r
   invisible(kknn::contr.dummy(2))
   invisible(glmnet::glmnet(x = data.frame(x1=c(0.2738,2.2448), x2=c(-0.0366,-0.5460)), y = c(-1.2748,1.8434)))
   invisible(rules::committees(c(1,2)))
+  invisible(viraldomain::sero[1,1])
   results <- magrittr::`%>%`(
     dplyr::bind_rows(
     workflowsets::workflow_set(
